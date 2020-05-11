@@ -34,6 +34,7 @@ type item struct {
 // binary heap of the items
 type binHeap []*item
 
+// New crates a new CapQueue instance.
 func New(cap int) *CapQueue {
 	h := &CapQueue{
 		heap:  make(binHeap, 0, cap),
@@ -75,6 +76,7 @@ func (h *CapQueue) Delete(key string) bool {
 	if !ok {
 		return false
 	}
+
 	delete(h.index, it.key)
 	h.order.Remove(it.Element)
 	heap.Remove(&h.heap, it.index)
@@ -111,7 +113,7 @@ func (h *CapQueue) Max() (string, int) {
 	return it.key, it.value
 }
 
-// Max returns the oldest key-value pair.
+// First returns the oldest key-value pair.
 // This returns the element that was added to the queue first, not the one with the lowest value.
 // If more than capacity elements are added to the queue, the oldest element gets removed.
 func (h *CapQueue) First() (string, int) {
@@ -122,7 +124,7 @@ func (h *CapQueue) First() (string, int) {
 	return it.key, it.value
 }
 
-// first returns the oldest element in the queue
+// first returns the oldest element in the queue.
 func (h *CapQueue) first() *item {
 	return h.order.Front().Value.(*item)
 }

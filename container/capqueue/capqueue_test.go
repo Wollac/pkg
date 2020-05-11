@@ -5,8 +5,8 @@ import (
 	"math/rand"
 	"testing"
 
-	. "github.com/gohornet/hornet/pkg/model/mselection/container/capqueue"
 	"github.com/stretchr/testify/assert"
+	. "github.com/wollac/pkg/container/capqueue"
 )
 
 const testCapacity = 10

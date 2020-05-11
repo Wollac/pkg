@@ -1,4 +1,4 @@
-package backoff
+package backoff_test
 
 import (
 	"errors"
@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/stretchr/testify/assert"
+	. "github.com/wollac/pkg/backoff"
 )
 
 func TestMaxRetries(t *testing.T) {

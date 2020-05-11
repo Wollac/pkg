@@ -1,4 +1,4 @@
-package backoff
+package backoff_test
 
 import (
 	"errors"
@@ -8,12 +8,13 @@ import (
 	"time"
 
 	"github.com/stretchr/testify/assert"
+	. "github.com/wollac/pkg/backoff"
 )
 
 var errTest = errors.New("test")
 
 const (
-	intervalDelta = 10 * time.Millisecond // allow 10ms deviation to pass the test
+	intervalDelta = 20 * time.Millisecond // allow 20ms deviation to pass the test
 )
 
 func assertInterval(t assert.TestingT, expected time.Duration, actual time.Duration) bool {

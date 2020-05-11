@@ -1,8 +1,10 @@
-package backoff
+package backoff_test
 
 import (
 	"fmt"
 	"time"
+
+	. "github.com/wollac/pkg/backoff"
 )
 
 func ExampleRetry() {
